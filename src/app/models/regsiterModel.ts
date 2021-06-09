@@ -1,4 +1,4 @@
-export interface UserRegister{
+export interface RegisterModel{
     email:String,
     password:String,
     firstName:String,

@@ -10,6 +10,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { JpegComponent } from './pages/jpeg/jpeg.component';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -28,6 +32,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    JpegComponent,
+    AuthLayoutComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
