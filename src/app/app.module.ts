@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import  {HttpClientModule} from '@angular/common/http';
 import { RouterModule } from "@angular/router";
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
@@ -14,6 +14,7 @@ import { JpegComponent } from './pages/jpeg/jpeg.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
@@ -27,13 +28,19 @@ import { LoginComponent } from './pages/login/login.component';
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot()
+    FormsModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot(
+      {positionClass:"toast-bottom-right"}
+    )
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     JpegComponent,
     AuthLayoutComponent,
+    HomeComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

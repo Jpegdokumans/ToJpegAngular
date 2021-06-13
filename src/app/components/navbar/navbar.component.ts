@@ -55,7 +55,10 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
-
+  logOut(){
+    localStorage.removeItem("token");
+    this.router.navigate(["login"]);
+  }
   collapse() {
     this.isCollapsed = !this.isCollapsed;
     const navbar = document.getElementsByTagName("nav")[0];

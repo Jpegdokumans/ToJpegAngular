@@ -1,5 +1,7 @@
+import { PhotoService } from './../../services/photo.service';
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { Photo } from 'src/app/models/photo';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -15,9 +17,22 @@ export class DashboardComponent implements OnInit {
   public clicked1: boolean = false;
   public clicked2: boolean = false;
 
-  constructor() {}
-
+  constructor(private photoService:PhotoService) {}
+  
+  photos:Photo[]
+  dataLoaded:boolean = false;
+  getAllImage(){
+    return this.photoService.getAllImage().subscribe(response=>{
+      this.photos = response.data;
+      this.dataLoaded = true;
+    });
+  }
+  getImage(baseString:String){
+    return `data:image/png;base64,${baseString}`
+  }
   ngOnInit() {
+    this.getAllImage();
+
     var gradientChartOptionsConfigurationWithTooltipBlue: any = {
       maintainAspectRatio: false,
       legend: {
@@ -65,7 +80,6 @@ export class DashboardComponent implements OnInit {
         }]
       }
     };
-
     var gradientChartOptionsConfigurationWithTooltipPurple: any = {
       maintainAspectRatio: false,
       legend: {

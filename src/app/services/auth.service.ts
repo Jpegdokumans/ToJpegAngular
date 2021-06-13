@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  apiUrl = "https://localhost:44395/api/auth"
+  apiUrl = "https://tojpeggroup.azurewebsites.net/api/auth"
   constructor(private httpClient:HttpClient) { }
 
   register(registerModel:RegisterModel):Observable<SingleResponseModel<TokenModel>>{

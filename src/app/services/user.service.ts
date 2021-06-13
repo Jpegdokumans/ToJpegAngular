@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  apiUrl = "https://localhost:44395/api/users"
+  apiUrl = "https://tojpeggroup.azurewebsites.net/api/users"
   constructor(private httpClient:HttpClient) { }
 
   getByMail(registerModel:String):Observable<SingleResponseModel<UserModel>>{

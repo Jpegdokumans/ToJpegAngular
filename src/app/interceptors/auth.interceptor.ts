@@ -15,7 +15,9 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     let token = localStorage.getItem('token');
     let  newRequest:HttpRequest<any>;
-
+    request.headers.set("Access-Control-Allow-Origin", "*");
+    request.headers.set("Content-Type","application/json");
+    request.headers.set("Accept","*/*");
     newRequest = request.clone({
       headers:request.headers.set('Authorization',`Bearer ${token}`)
     });
