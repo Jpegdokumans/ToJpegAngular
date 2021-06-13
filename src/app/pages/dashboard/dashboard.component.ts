@@ -28,7 +28,7 @@ export class DashboardComponent implements OnInit {
     });
   }
   getImage(baseString:String){
-    return `data:image/png;base64,${baseString}`
+    return `data:image/jpeg;base64,${baseString}`
   }
   ngOnInit() {
     this.getAllImage();
